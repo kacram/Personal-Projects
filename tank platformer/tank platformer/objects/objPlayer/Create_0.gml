@@ -6,3 +6,4 @@ frict = 2;
 jump = 15;
 vspd = 0;
 hspd = 0;
+grounded = false;

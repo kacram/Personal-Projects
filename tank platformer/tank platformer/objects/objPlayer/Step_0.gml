@@ -3,9 +3,8 @@
 
 //check for floor
 vspd += grav;
-if (vspd <= 0){	
+if (vspd >= 0){	
 	grounded = !place_free(x,y+vspd);
-	show_debug_message(grounded);
 	if (grounded == true){
 		vspd = 0;
 		while(1==1){
@@ -14,6 +13,21 @@ if (vspd <= 0){
 			}
 			else{
 				y+=1;
+			}
+		}
+	}
+}
+
+if (vspd <= 0){
+	ceiling = !place_free(x,y+vspd);
+	if (ceiling == true){
+		vspd = 0;
+		while (1==1){
+			if (!place_free(x,y-1)){
+				break;
+			}
+			else{
+				y-=1;
 			}
 		}
 	}
