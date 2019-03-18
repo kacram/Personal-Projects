@@ -1,10 +1,17 @@
 /// @description do stuff
 // You can write your code in this editor
 
+if(keyboard_check(ord("W")) && vspd <= 0){
+	grav = lowGrav;
+}
+else{
+	grav = normGrav;
+}
+
 //check for floor
 vspd += grav;
 if (vspd >= 0){	
-	grounded = !place_free(x,y+vspd);
+	grounded = !place_free(x,y+abs(vspd))
 	if (grounded == true){
 		vspd = 0;
 		while(1==1){
@@ -18,20 +25,6 @@ if (vspd >= 0){
 	}
 }
 
-if (vspd <= 0){
-	ceiling = !place_free(x,y+vspd);
-	if (ceiling == true){
-		vspd = 0;
-		while (1==1){
-			if (!place_free(x,y-1)){
-				break;
-			}
-			else{
-				y-=1;
-			}
-		}
-	}
-}
 
 //add horizontal speed
 dir = (keyboard_check(ord("D")) - keyboard_check(ord("A")));
@@ -50,10 +43,27 @@ if (isWall){
 		}
 	}
 }
+
 //jump
-if (grounded == true){
+if (!place_free(x,y+1)){
 	if(keyboard_check_pressed(ord("W"))){
 		vspd -= jump;
+	}
+}
+
+//check for cieling
+if (vspd <= 0){
+	ceiling = !place_free(x,y+vspd);
+	if (ceiling == true){
+		vspd = 0;
+		while (1==1){
+			if (!place_free(x,y-1)){
+				break;
+			}
+			else{
+				y-=1;
+			}
+		}
 	}
 }
 
