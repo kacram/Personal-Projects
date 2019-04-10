@@ -55,7 +55,7 @@ if(keyboard_check(ord("Q"))){
 
 if(keyboard_check(ord("A"))){
 	
-	maxHp -= manaScaleSpeed;
+	maxMana -= manaScaleSpeed;
 	if(maxMana <= 50){
 		
 		maxMana = 50;
