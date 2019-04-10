@@ -156,3 +156,29 @@ if(barHp != 0){
 
 draw_set_color(c_blue);
 draw_text(xOffset - 50,yOffset,"hp: " + string(hp) + "/" + string(maxHp));
+
+
+
+//----------------------------------------------EXP-------------------------------------------------------------------
+
+draw_set_color(c_dkgray);
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(xOffset - 8, yOffset + 38);
+draw_vertex(xOffset + 2, yOffset + 56);
+draw_vertex(xOffset - 240, yOffset + 38);
+draw_vertex(xOffset - 230, yOffset + 56);
+draw_primitive_end();
+
+
+draw_set_color(c_lime);
+draw_text(xOffset - 229, yOffset + 38, "EXP");
+
+draw_primitive_begin(pr_trianglestrip);
+draw_vertex(xOffset - 10, yOffset + 40);
+draw_vertex(xOffset, yOffset + 56);
+draw_vertex(xOffset - 200, yOffset + 40);
+draw_vertex(xOffset - 190, yOffset + 56);
+draw_primitive_end();
+
+
+

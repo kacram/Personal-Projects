@@ -1,6 +1,6 @@
 
 
-if(keyboard_check(vk_up)){
+if(keyboard_check(ord("R"))){
 	
 	hp += hpScaleSpeed;
 	
@@ -12,7 +12,7 @@ if(hp >= maxHp){
 		
 }
 
-if(keyboard_check(vk_down)){
+if(keyboard_check(ord("F"))){
 	
 	hp -= hpScaleSpeed;
 	
@@ -27,12 +27,13 @@ if(hp <= 0){
 if(keyboard_check(ord("W"))){
 	
 	mana += manaScaleSpeed;
-	if(mana >= maxMana){
+
+}
+
+if(mana >= maxMana){
 		
-		mana = maxMana;
+	mana = maxMana;
 		
-	}
-	
 }
 
 if(keyboard_check(ord("S"))){
@@ -55,10 +56,29 @@ if(keyboard_check(ord("Q"))){
 
 if(keyboard_check(ord("A"))){
 	
-	maxHp -= manaScaleSpeed;
+	maxMana -= manaScaleSpeed;
 	if(maxMana <= 50){
 		
 		maxMana = 50;
+		
+	}
+	
+}
+
+
+
+if(keyboard_check(ord("E"))){
+	
+	maxHp += hpScaleSpeed;
+	
+}
+
+if(keyboard_check(ord("D"))){
+	
+	maxHp -= hpScaleSpeed;
+	if(maxHp <= 200){
+		
+		maxHp = 200;
 		
 	}
 	
