@@ -47,19 +47,21 @@ if(keyboard_check(ord("S"))){
 }
 
 
-if(keyboard_check(ord("E"))){
+if(keyboard_check(ord("Q"))){
 	
-	maxHp += hpScaleSpeed;
+	maxMana += manaScaleSpeed;
 	
 }
 
-if(keyboard_check(ord("D"))){
+if(keyboard_check(ord("A"))){
 	
-	maxHp -= hpScaleSpeed;
-	if(maxHp <= 100){
+	maxHp -= manaScaleSpeed;
+	if(maxMana <= 50){
 		
-		maxHp = 100;
+		maxMana = 50;
 		
 	}
 	
 }
+
+
