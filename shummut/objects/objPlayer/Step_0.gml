@@ -64,4 +64,22 @@ if(keyboard_check(ord("A"))){
 	
 }
 
+if(keyboard_check(ord("E"))){
+	
+	maxHp += hpScaleSpeed;
+	
+}
+
+if(keyboard_check(ord("D"))){
+	
+	maxHp -= hpScaleSpeed;
+	if(maxHp <= 100){
+		
+		maxHp = 100;
+		
+	}
+	
+}
+
+
 
